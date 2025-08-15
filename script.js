@@ -1,6 +1,43 @@
 // Portfolio JavaScript - Enhanced functionality
 
 // Loading screen and initialization
+document.addEventListener("DOMContentLoaded", function () {
+    let generatedOTP = "";
+
+    // Generate a random 4-character alphanumeric OTP
+    function generateAlphanumericOTP() {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let otp = "";
+        for (let i = 0; i < 4; i++) {
+            otp += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return otp;
+    }
+
+    // On clicking Generate OTP
+    document.getElementById("generate-otp").addEventListener("click", function () {
+        const phone = document.getElementById("phone").value.trim();
+        if (!/^\d{10}$/.test(phone)) {
+            alert("Please enter a valid 10-digit phone number first.");
+            return;
+        }
+        generatedOTP = generateAlphanumericOTP();
+        alert("Your OTP is: " + generatedOTP); // Simulate sending OTP
+        document.getElementById("otp-section").style.display = "block";
+    });
+
+    // Validate OTP before submitting
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+        if (document.getElementById("otp-section").style.display === "block") {
+            const userOTP = document.getElementById("otp").value.trim();
+            if (userOTP !== generatedOTP) {
+                e.preventDefault();
+                alert("Incorrect OTP. Please try again.");
+            }
+        }
+    });
+});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Hide loading screen after animation
@@ -195,19 +232,9 @@ function validatePhoneNumber(phone) {
     // Remove all non-digit characters
     const cleanPhone = phone.replace(/\D/g, '');
     const indianMobileRegex = /^(?:\+91|91)?[6-9]\d{9}$/;
+
     return indianMobileRegex.test(cleanPhone);
 }
-
-// Generate 4-character alphanumeric OTP
-function generateAlphaNumericOTP() {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let otp = '';
-    for (let i = 0; i < 4; i++) {
-        otp += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return otp;
-}
-
 
 // Send email function
 async function sendEmail(formData) {
