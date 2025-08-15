@@ -1008,3 +1008,30 @@ nav {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
 }
+/* === OTP Section Styles === */
+#generate-otp {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff; /* match primary color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#generate-otp:hover {
+    background-color: #0056b3; /* darker shade on hover */
+}
+
+#otp-section {
+    margin-top: 15px;
+}
+
+#otp {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
