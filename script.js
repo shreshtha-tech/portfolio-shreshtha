@@ -194,9 +194,9 @@ function validateFormData(data) {
 function validatePhoneNumber(phone) {
     // Remove all non-digit characters
     const cleanPhone = phone.replace(/\D/g, '');
-    
-    // Check for Indian mobile number patterns
-const mobileNumber = "918600339"; // Valid (10 digits)    return indianMobileRegex.test(cleanPhone);
+    const indianMobileRegex = /^(?:\+91|91)?[6-9]\d{9}$/;
+
+    return indianMobileRegex.test(cleanPhone);
 }
 
 // Send email function
