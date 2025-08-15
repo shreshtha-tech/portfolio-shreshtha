@@ -195,9 +195,19 @@ function validatePhoneNumber(phone) {
     // Remove all non-digit characters
     const cleanPhone = phone.replace(/\D/g, '');
     const indianMobileRegex = /^(?:\+91|91)?[6-9]\d{9}$/;
-
     return indianMobileRegex.test(cleanPhone);
 }
+
+// Generate 4-character alphanumeric OTP
+function generateAlphaNumericOTP() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let otp = '';
+    for (let i = 0; i < 4; i++) {
+        otp += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return otp;
+}
+
 
 // Send email function
 async function sendEmail(formData) {
