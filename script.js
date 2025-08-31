@@ -1,785 +1,340 @@
-// Portfolio JavaScript - Enhanced functionality
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreshtha Gupta - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">SG</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-// Loading screen and initialization
-document.addEventListener("DOMContentLoaded", function () {
-    let generatedOTP = "";
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-wrapper">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Hi, I'm <span class="gradient-text">Shreshtha Gupta</span></h1>
+                        <h2 class="hero-subtitle">CS-AIML Student & Full Stack Developer</h2>
+                        <p class="hero-description">
+                            Final-year B.Tech student in CS-AIML with a strong foundation in full-stack web development. 
+                            Passionate about building real-world solutions and constantly expanding technical horizons 
+                            through projects and certifications.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                            <a href="#" class="btn btn-secondary" id="download-resume">Download Resume</a>
+                        </div>
+                        <div class="hero-social">
+                            <a href="https://github.com/Shreshtha-gupta" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/shreshtha-gupta" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:gshreshtha7698@gmail.com"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="avatar">
+                            <div class="avatar-inner">
+                                <img src="shreshtha-photo.jpeg" alt="Shreshtha Gupta" class="profile-photo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    // Generate a random 4-character alphanumeric OTP
-    function generateAlphanumericOTP() {
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        let otp = "";
-        for (let i = 0; i < 4; i++) {
-            otp += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return otp;
-    }
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I'm a passionate Computer Science student specializing in Artificial Intelligence and Machine Learning 
+                            at Pranveer Singh Institute of Technology, Kanpur. With a strong academic foundation and practical 
+                            experience in full-stack development, I'm dedicated to creating innovative solutions that bridge 
+                            technology and real-world applications.
+                        </p>
+                        <p>
+                            My journey in technology spans multiple programming languages and frameworks, with a particular 
+                            focus on modern web development technologies. I've successfully completed various projects 
+                            ranging from web scrapers to intelligent chatbots, always striving to implement best practices 
+                            and cutting-edge technologies.
+                        </p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h3>70%</h3>
+                                <p>Academic Performance</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>2+</h3>
+                                <p>Years of Experience</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>6+</h3>
+                                <p>Certifications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    // On clicking Generate OTP
-    document.getElementById("generate-otp").addEventListener("click", function () {
-        const phone = document.getElementById("phone").value.trim();
-        if (!/^\d{10}$/.test(phone)) {
-            alert("Please enter a valid 10-digit phone number first.");
-            return;
-        }
-        generatedOTP = generateAlphanumericOTP();
-        alert("Your OTP is: " + generatedOTP); // Simulate sending OTP
-        document.getElementById("otp-section").style.display = "block";
-    });
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Go</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Web Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">ReactJS</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Tools & Platforms</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Jupyter Notebook</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">PyCharm</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Libraries & Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">AI</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">DBMS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    // Validate OTP before submitting
-    document.getElementById("contact-form").addEventListener("submit", function (e) {
-        if (document.getElementById("otp-section").style.display === "block") {
-            const userOTP = document.getElementById("otp").value.trim();
-            if (userOTP !== generatedOTP) {
-                e.preventDefault();
-                alert("Incorrect OTP. Please try again.");
-            }
-        }
-    });
-});
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-spider"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>DataDrill</h3>
+                            <p class="project-tech">Go-lang • Web Scraping • Concurrency</p>
+                            <p class="project-description">
+                                Built a web scraper in Go to extract structured data from dynamic websites, 
+                                leveraging goroutines for fast and concurrent processing.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/Shreshtha-gupta/DataDrill" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>CogniMate</h3>
+                            <p class="project-tech">Tailwind CSS • NLP • Machine Learning • Gemini API</p>
+                            <p class="project-description">
+                                Developed an intelligent chatbot using NLP and machine learning, enabling 
+                                real-time user interaction, task automation, and personalized responses.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/Shreshtha-gupta/CogniMate" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Hide loading screen after animation
-    setTimeout(() => {
-        const loadingScreen = document.getElementById('loading-screen');
-        loadingScreen.classList.add('fade-out');
-        
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-            document.body.style.overflow = 'visible';
-        }, 1000);
-    }, 3000);
-
-    // Initialize all functionality
-    initializeNavigation();
-    initializeScrollAnimations();
-    initializeContactForm();
-    initializeResumeDownload();
-    initializeSmoothScrolling();
-});
-
-// Navigation functionality
-function initializeNavigation() {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    // Mobile menu toggle
-    if (navToggle) {
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-    }
-
-    // Close mobile menu when clicking on a link
-    const navItems = document.querySelectorAll('.nav-links a');
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            navToggle.classList.remove('active');
-        });
-    });
-
-    // Active navigation highlight
-    window.addEventListener('scroll', updateActiveNavigation);
-}
-
-// Update active navigation item based on scroll position
-function updateActiveNavigation() {
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-links a');
-    
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href').slice(1) === current) {
-            item.classList.add('active');
-        }
-    });
-}
-
-// Smooth scrolling for navigation links
-function initializeSmoothScrolling() {
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education & Certifications</h2>
+                <div class="education-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - 2026</div>
+                        <div class="timeline-content">
+                            <h3>B.Tech in CS-AIML</h3>
+                            <h4>Pranveer Singh Institute of Technology</h4>
+                            <p>Kanpur, Uttar Pradesh • Percentage: 70.0%</p>
+                            <div class="coursework">
+                                <strong>Key Coursework:</strong> Data Structures & Algorithms, Machine Learning, 
+                                Database Management System, Artificial Intelligence, UI/UX Design
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-content">
+                            <h3>ISC - Class 12</h3>
+                            <h4>Mercy Memorial School</h4>
+                            <p>Kanpur, Uttar Pradesh • Percentage: 84.4%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019</div>
+                        <div class="timeline-content">
+                            <h3>ICSE - Class 10</h3>
+                            <h4>Mercy Memorial School</h4>
+                            <p>Kanpur, Uttar Pradesh • Percentage: 80%</p>
+                        </div>
+                    </div>
+                </div>
                 
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
+                <div class="certifications">
+                    <h3>Professional Certifications</h3>
+                    <div class="cert-grid">
+                        <div class="cert-item">AWS Cloud Technical Essentials - Coursera</div>
+                        <div class="cert-item">HTML, CSS, JavaScript Bootcamp - Infosys Springboard</div>
+                        <div class="cert-item">Programming in Python Course - Coursera</div>
+                        <div class="cert-item">TCS iON Career Edge – Young Professional</div>
+                        <div class="cert-item">AWS Cloud Practitioner Essentials - AWS</div>
+                        <div class="cert-item">Complete Web Development Course – Udemy</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-// Scroll animations
-function initializeScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Let's Build Something Amazing Together</h2>
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Your Name</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="phone">Your Phone</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" required>
+                                <label for="subject">Subject</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea id="message" name="message" required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                        
+                        <!-- Alternative Contact Info -->
+                        <div class="contact-info-footer">
+                            <p>Or reach me directly:</p>
+                            <div class="direct-contact">
+                                <a href="mailto:gshreshtha7698@gmail.com" class="contact-direct">
+                                    <i class="fas fa-envelope"></i> gshreshtha7698@gmail.com
+                                </a>
+                                <a href="tel:+919118600339" class="contact-direct">
+                                    <i class="fas fa-phone"></i> +91-9118600339
+                                </a>
+                                <span class="contact-direct">
+                                    <i class="fas fa-map-marker-alt"></i> Kanpur, Uttar Pradesh
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-on-scroll');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="logo">SG</div>
+                    <p class="footer-quote">"Perfection isn't the goal. Precision is."</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Shreshtha-gupta" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/shreshtha-gupta" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:gshreshtha7698@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+919118600339"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shreshtha Gupta. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    // Observe all sections and cards
-    const elementsToAnimate = document.querySelectorAll(
-        '.section, .project-card, .skill-category, .timeline-item, .contact-card, .stat-item'
-    );
-    
-    elementsToAnimate.forEach(el => {
-        observer.observe(el);
-    });
-}
-
-// Contact form functionality
-function initializeContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleFormSubmission);
-    }
-}
-
-// Handle form submission with validation and email sending
-async function handleFormSubmission(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]');
-    
-    // Show loading state
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
-    
-    try {
-        // Validate form data
-        const formObject = Object.fromEntries(formData);
-        if (!validateFormData(formObject)) {
-            throw new Error('Please fill all required fields correctly');
-        }
-        
-        // Validate phone number
-        if (!validatePhoneNumber(formObject.phone)) {
-            throw new Error('Please enter a valid phone number');
-        }
-        
-        // Send email using EmailJS or mailto
-        await sendEmail(formObject);
-        
-        // Show success message
-        showMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
-        form.reset();
-        
-    } catch (error) {
-        console.error('Form submission error:', error);
-        showMessage(error.message || 'Failed to send message. Please try again.', 'error');
-    } finally {
-        // Restore button state
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }
-}
-
-// Validate form data
-function validateFormData(data) {
-    const required = ['name', 'email', 'phone', 'subject', 'message'];
-    
-    for (const field of required) {
-        if (!data[field] || data[field].trim().length === 0) {
-            return false;
-        }
-    }
-    
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-        return false;
-    }
-    
-    return true;
-}
-
-// Validate phone number (Indian format)
-function validatePhoneNumber(phone) {
-    // Remove all non-digit characters
-    const cleanPhone = phone.replace(/\D/g, '');
-    const indianMobileRegex = /^(?:\+91|91)?[6-9]\d{9}$/;
-
-    return indianMobileRegex.test(cleanPhone);
-}
-
-// Send email function
-async function sendEmail(formData) {
-    // Create mailto URL with form data
-    const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`);
-    const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Subject: ${formData.subject}
-
-Message:
-${formData.message}
-
----
-Sent from Portfolio Contact Form
-    `);
-    
-    const mailtoUrl = `mailto:gshreshtha7698@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open default email client
-    window.location.href = mailtoUrl;
-    
-    // Simulate successful sending for demo purposes
-    return new Promise((resolve) => {
-        setTimeout(resolve, 1000);
-    });
-}
-
-// Show success/error messages
-function showMessage(message, type) {
-    // Remove existing messages
-    const existingMessages = document.querySelectorAll('.success-message, .error-message');
-    existingMessages.forEach(msg => msg.remove());
-    
-    // Create new message element
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `${type}-message`;
-    messageDiv.textContent = message;
-    
-    // Add to form container
-    const formContainer = document.querySelector('.contact-form-container');
-    formContainer.appendChild(messageDiv);
-    
-    // Show message with animation
-    setTimeout(() => {
-        messageDiv.classList.add('show');
-    }, 100);
-    
-    // Remove message after 5 seconds
-    setTimeout(() => {
-        messageDiv.classList.remove('show');
-        setTimeout(() => messageDiv.remove(), 300);
-    }, 5000);
-}
-
-// Resume download functionality (for your existing PDF file)
-function initializeResumeDownload() {
-    const downloadBtn = document.getElementById('download-resume');
-    
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            downloadResume();
-        });
-    }
-}
-
-function downloadResume() {
-    // Correct relative path to the PDF
-    const resumePath = 'shreshtha-resume.pdf';
-    
-    // Create download link
-    const link = document.createElement('a');
-    link.href = resumePath;
-    link.download = 'shreshtha-resume.pdf';
-    
-    // Trigger download
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-
-// Initialize the download button
-initializeResumeDownload();
-// Utility functions
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Add scroll event listener with debouncing
-window.addEventListener('scroll', debounce(() => {
-    updateActiveNavigation();
-    
-    // Add navbar background on scroll
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(12, 12, 12, 0.95)';
-    } else {
-        navbar.style.background = 'rgba(12, 12, 12, 0.9)';
-    }
-}, 10));
-
-// Add loading states and error handling
-window.addEventListener('error', function(e) {
-    console.error('JavaScript error:', e.error);
-});
-
-// Add keyboard navigation support
-document.addEventListener('keydown', function(e) {
-    // ESC key to close mobile menu
-    if (e.key === 'Escape') {
-        const navLinks = document.querySelector('.nav-links');
-        const navToggle = document.querySelector('.nav-toggle');
-        if (navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            navToggle.classList.remove('active');
-        }
-    }
-});
-
-// Performance optimization - lazy load images if any are added later
-function lazyLoadImages() {
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-}
-
-// Initialize lazy loading when DOM is ready
-document.addEventListener('DOMContentLoaded', lazyLoadImages);
-
-// Add typing animation for hero subtitle
-function initializeTypingAnimation() {
-    const subtitle = document.querySelector('.hero-subtitle');
-    if (subtitle) {
-        const originalText = subtitle.textContent;
-        subtitle.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < originalText.length) {
-                subtitle.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        // Start typing animation after loading screen
-        setTimeout(() => {
-            typeWriter();
-        }, 4000);
-    }
-}
-
-// Initialize typing animation
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(() => {
-        initializeTypingAnimation();
-    }, 3500);
-});
-
-// Add particle animation background (optional enhancement)
-function createParticleBackground() {
-    const canvas = document.createElement('canvas');
-    canvas.style.position = 'fixed';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '-1';
-    canvas.style.opacity = '0.1';
-    
-    document.body.appendChild(canvas);
-    
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    
-    function createParticles() {
-        for (let i = 0; i < 50; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                size: Math.random() * 2 + 1
-            });
-        }
-    }
-    
-    function updateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#8b5cf6';
-        
-        particles.forEach(particle => {
-            particle.x += particle.vx;
-            particle.y += particle.vy;
-            
-            if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-            if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-            
-            ctx.beginPath();
-            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            ctx.fill();
-        });
-        
-        requestAnimationFrame(updateParticles);
-    }
-    
-    resizeCanvas();
-    createParticles();
-    updateParticles();
-    
-    window.addEventListener('resize', () => {
-        resizeCanvas();
-        particles = [];
-        createParticles();
-    });
-}
-
-// Initialize particle background (uncomment to enable)
-// document.addEventListener('DOMContentLoaded', createParticleBackground);
-
-// Add enhanced scroll reveal animations
-function enhancedScrollAnimations() {
-    const revealElements = document.querySelectorAll('.skill-tag, .project-card, .timeline-item');
-    
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 100);
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    revealElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.6s ease-out';
-        revealObserver.observe(el);
-    });
-}
-
-// Initialize enhanced animations
-document.addEventListener('DOMContentLoaded', enhancedScrollAnimations);
-
-// Add theme toggle functionality (bonus feature)
-function initializeThemeToggle() {
-    const themeToggle = document.createElement('button');
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    themeToggle.className = 'theme-toggle';
-    themeToggle.style.cssText = `
-        position: fixed;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        background: rgba(139, 92, 246, 0.2);
-        border: 2px solid #8b5cf6;
-        color: #8b5cf6;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        font-size: 1.2rem;
-    `;
-    
-    themeToggle.addEventListener('mouseover', () => {
-        themeToggle.style.background = '#8b5cf6';
-        themeToggle.style.color = 'white';
-    });
-    
-    themeToggle.addEventListener('mouseout', () => {
-        themeToggle.style.background = 'rgba(139, 92, 246, 0.2)';
-        themeToggle.style.color = '#8b5cf6';
-    });
-    
-    // Toggle between light and dark themes (currently using dark theme)
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-theme');
-        const icon = themeToggle.querySelector('i');
-        icon.className = document.body.classList.contains('light-theme') 
-            ? 'fas fa-sun' 
-            : 'fas fa-moon';
-    });
-    
-    document.body.appendChild(themeToggle);
-}
-
-// Initialize theme toggle (uncomment to enable)
-// document.addEventListener('DOMContentLoaded', initializeThemeToggle);
-
-// Add page loading progress bar
-function initializeProgressBar() {
-    const progressBar = document.createElement('div');
-    progressBar.className = 'scroll-progress';
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 4px;
-        background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899);
-        z-index: 10000;
-        transition: width 0.3s ease;
-    `;
-    
-    document.body.appendChild(progressBar);
-    
-    window.addEventListener('scroll', () => {
-        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        progressBar.style.width = scrolled + '%';
-    });
-}
-
-// Initialize progress bar
-document.addEventListener('DOMContentLoaded', initializeProgressBar);
-
-// Add copy email functionality
-function initializeCopyEmail() {
-    const emailElements = document.querySelectorAll('a[href^="mailto:"]');
-    
-    emailElements.forEach(emailLink => {
-        emailLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const email = emailLink.href.replace('mailto:', '');
-            
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(email).then(() => {
-                    showTemporaryTooltip(emailLink, 'Email copied!');
-                }).catch(() => {
-                    // Fallback to mailto
-                    window.location.href = emailLink.href;
-                });
-            } else {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = email;
-                document.body.appendChild(textArea);
-                textArea.select();
-                
-                try {
-                    document.execCommand('copy');
-                    showTemporaryTooltip(emailLink, 'Email copied!');
-                } catch (err) {
-                    window.location.href = emailLink.href;
-                }
-                
-                document.body.removeChild(textArea);
-            }
-        });
-    });
-}
-
-// Show temporary tooltip
-function showTemporaryTooltip(element, message) {
-    const tooltip = document.createElement('div');
-    tooltip.textContent = message;
-    tooltip.style.cssText = `
-        position: absolute;
-        background: #8b5cf6;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 12px;
-        z-index: 10000;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    `;
-    
-    document.body.appendChild(tooltip);
-    
-    const rect = element.getBoundingClientRect();
-    tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
-    tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
-    
-    setTimeout(() => tooltip.style.opacity = '1', 100);
-    
-    setTimeout(() => {
-        tooltip.style.opacity = '0';
-        setTimeout(() => document.body.removeChild(tooltip), 300);
-    }, 2000);
-}
-
-// Initialize copy email functionality
-document.addEventListener('DOMContentLoaded', initializeCopyEmail);
-
-// Add social media hover effects
-function initializeSocialEffects() {
-    const socialLinks = document.querySelectorAll('.hero-social a, .footer-social a');
-    
-    socialLinks.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            link.style.transform = 'translateY(-3px) scale(1.1)';
-        });
-        
-        link.addEventListener('mouseleave', () => {
-            link.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-}
-
-// Initialize social effects
-document.addEventListener('DOMContentLoaded', initializeSocialEffects);
-
-// Add form validation enhancements
-function enhanceFormValidation() {
-    const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
-    
-    inputs.forEach(input => {
-        input.addEventListener('blur', validateField);
-        input.addEventListener('input', clearFieldError);
-    });
-}
-
-function validateField(e) {
-    const field = e.target;
-    const value = field.value.trim();
-    
-    // Remove existing error styling
-    field.classList.remove('error');
-    
-    // Validate based on field type
-    switch (field.type) {
-        case 'email':
-            if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-                showFieldError(field, 'Please enter a valid email address');
-            }
-            break;
-        case 'tel':
-            if (value && !validatePhoneNumber(value)) {
-                showFieldError(field, 'Please enter a valid phone number');
-            }
-            break;
-        default:
-            if (field.required && !value) {
-                showFieldError(field, 'This field is required');
-            }
-    }
-}
-
-function showFieldError(field, message) {
-    field.classList.add('error');
-    
-    let errorDiv = field.parentNode.querySelector('.field-error');
-    if (!errorDiv) {
-        errorDiv = document.createElement('div');
-        errorDiv.className = 'field-error';
-        errorDiv.style.cssText = `
-            color: #ef4444;
-            font-size: 0.8rem;
-            margin-top: 0.25rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        `;
-        field.parentNode.appendChild(errorDiv);
-    }
-    
-    errorDiv.textContent = message;
-    setTimeout(() => errorDiv.style.opacity = '1', 100);
-}
-
-function clearFieldError(e) {
-    const field = e.target;
-    const errorDiv = field.parentNode.querySelector('.field-error');
-    
-    if (errorDiv) {
-        errorDiv.style.opacity = '0';
-        setTimeout(() => errorDiv.remove(), 300);
-    }
-    
-    field.classList.remove('error');
-}
-
-// Add error field styles
-const style = document.createElement('style');
-style.textContent = `
-    .form-group input.error,
-    .form-group textarea.error {
-        border-color: #ef4444 !important;
-    }
-`;
-document.head.appendChild(style);
-
-// Initialize enhanced form validation
-document.addEventListener('DOMContentLoaded', enhanceFormValidation);
-
-// Console welcome message
-console.log(`
-🎉 Welcome to Shreshtha Gupta's Portfolio!
-🚀 Built with modern web technologies
-💼 Full-stack developer & CS-AIML student
-📧 Contact: gshreshtha7698@gmail.com
-`);
-
-// Add emergency contact validation
-function validateEmergencyContact() {
-    const phoneField = document.getElementById('phone');
-    
-    if (phoneField) {
-        phoneField.addEventListener('input', (e) => {
-            const value = e.target.value;
-            const cleanedValue = value.replace(/\D/g, '');
-            
-            // Format phone number as user types
-            if (cleanedValue.length <= 10) {
-                if (cleanedValue.length > 5) {
-                    e.target.value = cleanedValue.slice(0, 5) + '-' + cleanedValue.slice(5);
-                } else {
-                    e.target.value = cleanedValue;
-                }
-            }
-        });
-    }
-}
-
-// Initialize emergency contact validation
-document.addEventListener('DOMContentLoaded', validateEmergencyContact);
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>git commit -m "Updated feature XYZ"
