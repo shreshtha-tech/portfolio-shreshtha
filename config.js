@@ -8,12 +8,11 @@ const portfolioConfig = {
         title: "CS-AIML Student & Full Stack Developer",
         location: "Kanpur, Uttar Pradesh",
         phone: "+91-9118600339",
-        email: "gshreshtha7698@gmail.com", // Main contact email
-        techEmail: "sg26.tech@gmail.com", // Alternative email
+        email: "gshreshtha7698@gmail.com",
+        techEmail: "sg26.tech@gmail.com",
         linkedin: "shreshtha-gupta",
         github: "Shreshtha-gupta",
         
-        // Profile description
         profile: "Final-year B.Tech student in CS-AIML with a strong foundation in full-stack web development. Passionate about building real-world solutions and constantly expanding technical horizons through projects and certifications."
     },
     
@@ -87,8 +86,8 @@ const portfolioConfig = {
                 "Structured data parsing",
                 "Fast and efficient data retrieval"
             ],
-            github: "https://github.com/Shreshtha-gupta/DataDrill", // Update with actual link
-            demo: "#", // Update with actual demo link
+            github: "https://github.com/Shreshtha-gupta/DataDrill",
+            demo: "#",
             icon: "fas fa-spider"
         },
         {
@@ -104,8 +103,8 @@ const portfolioConfig = {
                 "Gemini API integration",
                 "Context-aware conversations"
             ],
-            github: "https://github.com/Shreshtha-gupta/CogniMate", // Update with actual link
-            demo: "#", // Update with actual demo link
+            github: "https://github.com/Shreshtha-gupta/CogniMate",
+            demo: "#",
             icon: "fas fa-robot"
         }
     ],
@@ -116,7 +115,7 @@ const portfolioConfig = {
             name: "AWS Cloud Technical Essentials",
             provider: "Coursera",
             year: "2024",
-            credential: "#" // Add credential link if available
+            credential: "#"
         },
         {
             name: "HTML, CSS, JavaScript Bootcamp, Python",
@@ -150,29 +149,19 @@ const portfolioConfig = {
         }
     ],
     
+    // EmailJS Configuration
+    emailConfig: {
+        publicKey: "YOUR_PUBLIC_KEY", // Replace with your EmailJS public key
+        serviceID: "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        templateID: "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        toEmail: "gshreshtha7698@gmail.com"
+    },
+    
     // Contact Settings
     contactSettings: {
         primaryEmail: "gshreshtha7698@gmail.com",
-        enablePhoneVerification: true,
+        enablePhoneVerification: false,
         requiredFields: ["name", "email", "phone", "subject", "message"],
-        
-        // Email templates
-        emailTemplates: {
-            subject: "Portfolio Contact: {{subject}}",
-            body: `
-Name: {{name}}
-Email: {{email}}
-Phone: {{phone}}
-Subject: {{subject}}
-
-Message:
-{{message}}
-
----
-Sent from Portfolio Contact Form
-Timestamp: {{timestamp}}
-            `
-        },
         
         // Phone validation settings
         phoneValidation: {
@@ -187,52 +176,24 @@ Timestamp: {{timestamp}}
         github: "https://github.com/Shreshtha-gupta",
         linkedin: "https://linkedin.com/in/shreshtha-gupta",
         email: "mailto:gshreshtha7698@gmail.com",
-        phone: "tel:+919118600339",
-        
-        // Additional social media (uncomment and update as needed)
-        // twitter: "https://twitter.com/your_handle",
-        // instagram: "https://instagram.com/your_handle",
-        // youtube: "https://youtube.com/your_channel",
+        phone: "tel:+919118600339"
     },
     
     // Theme Settings
     theme: {
-        primaryColor: "#8b5cf6", // Purple
-        secondaryColor: "#6366f1", // Indigo
-        accentColor: "#ec4899", // Pink
-        warningColor: "#f59e0b", // Amber
-        successColor: "#10b981", // Emerald
-        errorColor: "#ef4444", // Red
+        primaryColor: "#8b5cf6",
+        secondaryColor: "#6366f1",
+        accentColor: "#ec4899",
+        warningColor: "#f59e0b",
+        successColor: "#10b981",
+        errorColor: "#ef4444",
         
-        // Gradient combinations
         gradients: {
             primary: "linear-gradient(45deg, #6366f1, #8b5cf6)",
             secondary: "linear-gradient(45deg, #8b5cf6, #ec4899)", 
             accent: "linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899, #f59e0b)",
             background: "linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%)"
         }
-    },
-    
-    // Animation Settings
-    animations: {
-        loadingDuration: 3000, // Loading screen duration in ms
-        typingSpeed: 100, // Typing animation speed in ms
-        scrollOffset: 80, // Navbar height offset for smooth scrolling
-        
-        // Animation delays
-        staggerDelay: 100, // Delay between animated elements
-        fadeInDuration: 800, // Fade in animation duration
-    },
-    
-    // Feature Flags
-    features: {
-        particleBackground: false, // Enable/disable particle animation
-        themeToggle: false, // Enable/disable theme toggle
-        progressBar: true, // Show scroll progress bar
-        copyEmailOnClick: true, // Copy email to clipboard on click
-        enhancedAnimations: true, // Enhanced scroll animations
-        formValidation: true, // Real-time form validation
-        phoneFormatting: true, // Auto-format phone numbers
     },
     
     // SEO Settings
@@ -244,39 +205,9 @@ Timestamp: {{timestamp}}
             "Web Developer", "Machine Learning", "Artificial Intelligence",
             "React", "Node.js", "Python", "Go", "Portfolio"
         ],
-        author: "Shreshtha Gupta",
-        og: {
-            type: "website",
-            url: "https://your-portfolio-url.com", // Update with actual URL
-            image: "https://your-portfolio-url.com/og-image.jpg" // Add OG image
-        }
-    },
-    
-    // Resume Settings
-    resumeSettings: {
-        filename: "Shreshtha_Gupta_Resume.pdf",
-        sections: [
-            "profile", "education", "skills", "projects", 
-            "certifications", "extracurricular"
-        ],
-        
-        // Additional resume data
-        extracurricular: [
-            "Actively participated in national-level hackathons and competitive programming contests",
-            "Volunteered at tech community events by organizing and coordinating technical workshops and seminars"
-        ]
+        author: "Shreshtha Gupta"
     }
 };
-
-// Export configuration for use in other files
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = portfolioConfig;
-}
-
-// Make available globally for browser usage
-if (typeof window !== 'undefined') {
-    window.portfolioConfig = portfolioConfig;
-}
 
 // Helper functions for configuration usage
 const configHelpers = {
@@ -300,32 +231,6 @@ const configHelpers = {
         return portfolioConfig.theme[colorName] || portfolioConfig.theme.primaryColor;
     },
     
-    // Check if feature is enabled
-    isFeatureEnabled(featureName) {
-        return portfolioConfig.features[featureName] || false;
-    },
-    
-    // Get email template
-    getEmailTemplate(templateName) {
-        return portfolioConfig.contactSettings.emailTemplates[templateName] || '';
-    },
-    
-    // Format email template with data
-    formatEmailTemplate(templateName, data) {
-        let template = this.getEmailTemplate(templateName);
-        
-        // Replace placeholders with actual data
-        Object.keys(data).forEach(key => {
-            const placeholder = `{{${key}}}`;
-            template = template.replace(new RegExp(placeholder, 'g'), data[key]);
-        });
-        
-        // Add timestamp
-        template = template.replace('{{timestamp}}', new Date().toISOString());
-        
-        return template;
-    },
-    
     // Validate phone number using config pattern
     validatePhone(phoneNumber) {
         const pattern = portfolioConfig.contactSettings.phoneValidation.pattern;
@@ -334,7 +239,13 @@ const configHelpers = {
     }
 };
 
-// Make helpers available globally
+// Export configuration for use in other files
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = portfolioConfig;
+}
+
+// Make available globally for browser usage
 if (typeof window !== 'undefined') {
+    window.portfolioConfig = portfolioConfig;
     window.configHelpers = configHelpers;
 }
