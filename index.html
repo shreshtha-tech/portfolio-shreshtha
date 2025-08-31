@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="portfolio-text" id="portfolio-text">PORTFOLIO</div>
-    </div>
-
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -40,7 +37,6 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-wrapper">
-                    
                     <div class="hero-content">
                         <h1 class="hero-title">Hi, I'm <span class="gradient-text">Shreshtha Gupta</span></h1>
                         <h2 class="hero-subtitle">CS-AIML Student & Full Stack Developer</h2>
@@ -54,18 +50,18 @@
                             <a href="#" class="btn btn-secondary" id="download-resume">Download Resume</a>
                         </div>
                         <div class="hero-social">
-                            <a href="https://github.com/shreshtha-tech" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/shreshtha-gupta-884255219/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:sg26.tech@gmail.com"><i class="fas fa-envelope"></i></a>
+                            <a href="https://github.com/Shreshtha-gupta" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/shreshtha-gupta" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:gshreshtha7698@gmail.com"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
-                   <div class="hero-image">
-    <div class="avatar">
-        <div class="avatar-inner">
-            <img src="shreshtha-photo.jpeg" alt="Shreshtha Gupta" class="profile-photo">
-        </div>
-    </div>
-</div>
+                    <div class="hero-image">
+                        <div class="avatar">
+                            <div class="avatar-inner">
+                                <img src="shreshtha-photo.jpeg" alt="Shreshtha Gupta" class="profile-photo">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -183,8 +179,7 @@
                                 leveraging goroutines for fast and concurrent processing.
                             </p>
                             <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://github.com/Shreshtha-gupta/DataDrill" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </div>
@@ -201,8 +196,7 @@
                                 real-time user interaction, task automation, and personalized responses.
                             </p>
                             <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://github.com/Shreshtha-gupta/CogniMate" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </div>
@@ -266,34 +260,6 @@
             <div class="container">
                 <h2 class="section-title">Let's Build Something Amazing Together</h2>
                 <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <h3>Email</h3>
-                            <p>gshreshtha7698@gmail.com</p>
-                            <a href="mailto:gshreshtha7698@gmail.com" class="contact-link">Send Message</a>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <h3>Phone</h3>
-                            <p>+91-9118600339</p>
-                            <a href="tel:+919118600339" class="contact-link">Call Now</a>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <h3>Location</h3>
-                            <p>Kanpur, Uttar Pradesh</p>
-                        </div>
-                    </div>
-                    
                     <div class="contact-form-container">
                         <form id="contact-form" class="contact-form">
                             <div class="form-group">
@@ -307,16 +273,9 @@
                             </div>
                             
                             <div class="form-group">
-    <input type="tel" id="phone" name="phone" required>
-    <label for="phone">Your Phone</label>
-</div>
-
-<!-- OTP Section -->
-<div class="form-group otp-section">
-    <input type="text" id="otp" name="otp" maxlength="4" placeholder="Enter OTP">
-    <button type="button" id="generate-otp" class="btn btn-secondary">Get OTP</button>
-</div>
-
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="phone">Your Phone</label>
+                            </div>
                             
                             <div class="form-group">
                                 <input type="text" id="subject" name="subject" required>
@@ -332,6 +291,22 @@
                                 <i class="fas fa-paper-plane"></i> Send Message
                             </button>
                         </form>
+                        
+                        <!-- Alternative Contact Info -->
+                        <div class="contact-info-footer">
+                            <p>Or reach me directly:</p>
+                            <div class="direct-contact">
+                                <a href="mailto:gshreshtha7698@gmail.com" class="contact-direct">
+                                    <i class="fas fa-envelope"></i> gshreshtha7698@gmail.com
+                                </a>
+                                <a href="tel:+919118600339" class="contact-direct">
+                                    <i class="fas fa-phone"></i> +91-9118600339
+                                </a>
+                                <span class="contact-direct">
+                                    <i class="fas fa-map-marker-alt"></i> Kanpur, Uttar Pradesh
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -349,7 +324,7 @@
                 <div class="footer-social">
                     <a href="https://github.com/Shreshtha-gupta" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com/in/shreshtha-gupta" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:sg26.tech@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:gshreshtha7698@gmail.com"><i class="fas fa-envelope"></i></a>
                     <a href="tel:+919118600339"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
@@ -359,6 +334,7 @@
         </div>
     </footer>
 
+    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
-</html>
+</html>git commit -m "Updated feature XYZ"
